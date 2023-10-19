@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.banner-photo {
+    animation: photofadeIn 1.5s ease-out;
+}
+/* 用animate的keyframes製造淡入淡出 */
+@keyframes photofadeIn {
+    0% {
+        display: block;
+        opacity: 0;
+    }
+    30% {
+        display: block;
+        opacity: .4;
+    }
+    80% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+.banner-txt {
+    animation: textfadeIn 1.5s ease-out;
+}
+@keyframes textfadeIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    40% {
+        transform: translateY(10px);
+        opacity: .4;
+    }
+    80% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+.deco-box::before {
+    content: '';
+    display: block;
+    min-width: 90%;
+    height: 400px;
+    position: absolute;
+    /* top: 90px; */
+    right: 0;
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+.deco-box::after {
+    content: '';
+    display: block;
+    min-width: 90%;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-size: 88%;
+    background-repeat: no-repeat;
+}
+.background1.deco-box::before {
+    background-image: url("https://www.benqmaterials.com/tw/images/banner_product_deco_1.png");
+}
+.background1.deco-box::after {
+    background-image: url("https://www.benqmaterials.com/tw/images/banner_product_deco_hover.png");
+}
+.background2.deco-box::before {
+    background-image: url("https://www.benqmaterials.com/tw/images/banner_product_deco_2.png");
+}
+.background2.deco-box::after {
+    background-image: url("https://www.benqmaterials.com/tw/images/banner_product_deco_hover.png");
+}
+.background3.deco-box::before {
+    background-image: url("https://www.benqmaterials.com/tw/images/banner_product_deco_5.png");
+}
+.background3.deco-box::after {
+    background-image: url("https://www.benqmaterials.com/tw/images/banner_product_deco_hover.png");
+}
+
+
+.carousel-control-next, .carousel-control-prev {
+    z-index: 66 !important;
+}

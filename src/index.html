@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明基材料</title>
+    <link rel="shortcut icon" href="https://www.benqmaterials.com/tw/images/touch-icon/apple-icon-60x60.png">
+    <script src="https://kit.fontawesome.com/abd4274278.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- 懸浮的header區 -->
+	<div class="w-full h-14 md:h-16 bg-white fixed top-0 left-0 shadow-[0_2px_5px_rgba(126,126,126,0.68)] z-[100]">
+		<div class="h-full ml-2 mr-2 md:mx-25px flex justify-between md:justify-start items-center">
+			<a href="https://www.benqmaterials.com/tw/" target="_blank">
+				<img class="w-[180px] md:mr-8 cursor-pointer hover:brightness-150 hover:translate-x-2 hover:ease-out duration-300" src="https://www.benqmaterials.com/tw/images/logo.png">
+			</a>
+			<a href="https://www.benqmaterials.com/tw/25-anniversary/" target="_blank">
+				<img class="md:mr-8 cursor-pointer hover:brightness-150 hover:translate-x-2 hover:ease-out duration-300" src="https://www.benqmaterials.com/tw/images/anniversarypic/header_25ICON.png">
+			</a>
+			<a href="https://esg.benqmaterials.com/" target="_blank">
+				<img class="hidden md:block w-[130px] cursor-pointer hover:brightness-150 hover:translate-x-2 hover:ease-out duration-300" src="https://www.benqmaterials.com/tw/images/esg_logo.png">
+			</a>
+		</div>
+	</div>
+
+    <!-- banner區，自動切換圖片、文字 -->
+    <div class="h-96 mt-14 md:hidden">
+        <img class="w-full h-full object-cover align-baseline banner-photo" src="https://www.benqmaterials.com/upload/banner_list_mobile/twL_banner_22I16_3Ty592jNkW.jpg">
+        <img class="w-full h-full object-cover align-baseline banner-photo hidden" src="https://www.benqmaterials.com/upload/banner_list_mobile/twL_banner_23I27_zik2UAilU6.jpg">
+        <img class="w-full h-full object-cover align-baseline banner-photo hidden" src="https://www.benqmaterials.com/upload/banner_list_mobile/twL_banner_23I15_ZnhRgkxNGr.jpg">
+    </div>
+    <div class="h-24 flex justify-center items-center md:hidden">
+        <p class="text-3xl text-violet-900 font-extrabold text-center banner-txt">探索材料科學的明日科技</p>
+        <p class="text-3xl text-violet-900 font-extrabold text-center banner-txt hidden">智慧調光膜多元對話</p>
+        <p class="text-3xl text-violet-900 font-extrabold text-center banner-txt hidden">創新 無所不在</p>
+    </div>
+
+	<div class="w-full h-full md:mt-16">
+		<img class="w-full photo-box" src="https://www.benqmaterials.com/upload/banner_list/twL_banner_23I25_UjAH2zI3Xy.jpg" alt="">
+	</div>
+    
+    <!-- 自製carousel(差滑動效果) -->
+    <!-- <div class="px-16 relative text-center h-80">
+        <div class="h-full slick-slide deco-box background1">
+            <h3 class="text-white text-2xl leading-10 py-1 relative top-8 z-10">顯示器解決方案</h3>
+            <p class=" text-white font-light leading-7 relative top-10 z-10">以護眼抗眩光為核心，有效降低複雜環境光源反光與眩光</p>
+            <img class="block absolute top-6 left-0 z-20 align-bottom"
+                src="https://www.benqmaterials.com/upload/news_banner_product_list_pic/twL_news_banner_product_22I16_WYlkRpuq4f.png"> 
+        </div>
+        <div class="h-full slick-slide deco-box background2 hidden">
+            <h3 class="text-white text-2xl leading-10 py-1 relative top-8 z-10">儲能解決方案</h3>
+            <p class="w-60 text-white font-light leading-7 relative top-10 z-10">可應用於消費、動力、儲能，提供最佳成本及產品效率表現</p>
+            <img class="block absolute top-6 left-0 z-20 align-bottom"
+                src="https://www.benqmaterials.com/upload/news_banner_product_list_pic/twL_news_banner_product_22I08_fFvQx5gM3h.png"> 
+        </div>
+        <div class="h-full slick-slide deco-box background3 hidden">
+            <h3 class="text-white text-2xl leading-10 py-1 relative top-8 z-20">車載解決方案</h3>
+            <p class="w-60 text-white font-light leading-7 relative top-10 z-20">透過材料科學各項應用，對應環境耐候性及品質，確保最佳能耗表現</p>
+            <img class="block absolute top-6 left-0 z-10 align-bottom blur-xs"
+                src="https://www.benqmaterials.com/upload/news_banner_product_list_pic/twL_news_banner_product_22J13_inFZ1Le1a7.png"> 
+        </div>
+        
+        
+        <button id="nextBtn">
+            <svg  xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#000" class="bi bi-chevron-right absolute right-0 bottom-1/2 z-30" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+        <button id="preBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#000" class="bi bi-chevron-left absolute left-0 bottom-1/2 z-30" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </button>
+    </div> -->
+
+
+    <!-- 用Bootstrao做carousel -->
+    <div id="carouselExample" class="carousel slide md:hidden">
+        <div class="carousel-inner">
+          <div class="carousel-item active text-center h-340 relative z-10 deco-box background1">
+            <h3 class="text-white text-2xl leading-10 mt-20 relative z-20">顯示器解決方案</h3>
+            <p class=" text-white font-light leading-7 px-20 relative z-20">以護眼抗眩光為核心，有效降低複雜環境光源反光與眩光</p>
+            <img class="d-block w-100 absolute bottom-0 z-10"
+                src="https://www.benqmaterials.com/upload/news_banner_product_list_pic/twL_news_banner_product_22I16_WYlkRpuq4f.png">
+          </div>
+          <div class="carousel-item text-center h-340 relative z-10 deco-box background2">
+            <h3 class="text-white text-2xl leading-10 mt-20 relative z-20">儲能解決方案</h3>
+            <p class=" text-white font-light leading-7 px-20 relative z-20">可應用於消費、動力、儲能，提供最佳成本及產品效率表現</p>
+            <img class="d-block w-100 absolute bottom-0 z-10"
+                src="https://www.benqmaterials.com/upload/news_banner_product_list_pic/twL_news_banner_product_22I08_fFvQx5gM3h.png">
+          </div>
+          <div class="carousel-item text-center h-340 relative z-10 deco-box background3">
+            <h3 class="text-white text-2xl leading-10 mt-20 relative z-20">車載解決方案</h3>
+            <p class=" text-white font-light leading-7 px-20 relative z-20">透過材料科學各項應用，對應環境耐候性及品質，確保最佳能耗表現</p>
+            <img  class="d-block w-100 absolute bottom-0 z-10 blur-xs"
+                src="https://www.benqmaterials.com/upload/news_banner_product_list_pic/twL_news_banner_product_22J13_inFZ1Le1a7.png">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-indigo-800 rounded-full" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-indigo-800 rounded-full" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- 「創新無所不在」的文章區 -->
+    <div class="bg-[#f0eeef] mt-20 pb-[20px] px-8 md:px-72 md:mt-0">
+        <h2 class="text-violet-900 text-3xl md:text-4xl font-normal text-center pt-14 pb-7">創新無所不在</h2>
+        <div class="md:mx-48">
+			<p class="text-[#3b3b3b] text-justify font-light md:font-normal leading-7 mb-0">
+				明基材料為全球顯示器材料解決方案領導廠商，身為材料科學與創新應用的專家，透過材料及6大製程核心技術交叉應用，發展機能膜、先進電池材料、生醫及織物4大應用類別，目前有專業醫療品牌安適康(Anscare)、聯和醫材(SIGMA)，個人醫美品牌護妍天使(DermaAngel)、美若康(Miacare)、琦洛麗(Gem Monster)，以及環保防水透氣織物 Xpore，以材料科技打造美好生活。
+			</p>
+
+			<!-- PC版：靜態呈現圖案 -->
+			<div class="hidden md:flex md:ml-[-20px]">
+				<img class="max-w-xs" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_HyVYO4ijLQ.png">
+				<img class="max-w-xs" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_onvY6Yw2HB.png">
+				<img class="max-w-xs" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_5iGYKCgo0F.png">
+				<img class="max-w-xs" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_IRBzCuc1do.png" alt="護妍天使" title="護妍天使">
+				<img class="max-w-xs" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_V9ldG3DLK9.png" alt="xpore" title="xpore">
+			</div>
+		</div>
+
+        <!-- 手機版：用Bootstrao的自動輪播carousel -->
+        <div id="carouselAutoplaying" class="carousel slide md:hidden max-h-[80px]" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2000">
+                <img class="d-block w-100" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_HyVYO4ijLQ.png">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+				<div class="w-100 flex justify-center">
+					<img  class="d-block w-11/12" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_onvY6Yw2HB.png">
+				</div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img class="d-block w-100" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_5iGYKCgo0F.png">
+              </div>
+			  <div class="carousel-item" data-bs-interval="2000">
+				<div class="w-100 flex justify-center">
+					<img class="d-block w-10/12" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_IRBzCuc1do.png">
+				</div>
+              </div>
+			  <div class="carousel-item" data-bs-interval="2000">
+                <img class="d-block w-100" src="https://www.benqmaterials.com/upload/news_home_brand_list_pic/twL_news_home_brand_22G12_V9ldG3DLK9.png">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
+              <span class="" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#000" class="bi bi-chevron-left opacity-60 absolute left-[-30px] bottom-1/4 z-30" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+              </span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
+              <span class="" aria-hidden="true">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#000" class="bi bi-chevron-right opacity-60 absolute right-[-30px] bottom-1/4 z-30" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+		
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-[#3b3b3b] text-white px-8 py-3">
+		<div class="md:max-w-[1500px] md:px-28  md:m-auto">
+			<div class="w-full after:content-[''] after:block after:w-full after:h-[1px] after:bg-[#4f4f4f] after:mt-3">
+				<div class="w-full flex">
+					<a class="block w-[250px] md:w-[210px] cursor-pointer hover:saturate-150 hover:translate-x-2 hover:ease-out duration-300" href="https://www.benqmaterials.com/tw/" target="_blank">
+						<img class="w-full"
+							src="https://www.benqmaterials.com/tw/images/logo_w.png" alt="明基材料">
+					</a>
+					<ul class="hidden md:flex mb-0">
+						<li class="pr-12">
+							<a class="text-snow hover:text-light-purple hover:translate-x-2 ease-linear duration-200 no-underline leading-10 block" href="https://www.benqmaterials.com/tw/about/about-benQ/">公司介紹</a>
+						</li>
+						<li class="pr-12">
+							<a class="text-snow hover:text-light-purple hover:translate-x-2 ease-linear duration-200 no-underline leading-10 block" href="https://www.benqmaterials.com/tw/news/">新聞中心</a>
+						</li>
+						<li class="pr-12">
+							<a class="text-snow hover:text-light-purple hover:translate-x-2 ease-linear duration-200 no-underline leading-10 block" href="https://www.benqmaterials.com/tw/exhibition/">展會活動</a>
+						</li>
+						<li class="pr-12">
+							<a class="text-snow hover:text-light-purple hover:translate-x-2 ease-linear duration-200 no-underline leading-10 block" href="https://www.benqmaterials.com/tw/hr-detail/261/">職缺訊息</a>
+						</li>
+						<li class="pr-12">
+							<a class="text-snow hover:text-light-purple hover:translate-x-2 ease-linear duration-200 no-underline leading-10 block" href="https://www.benqmaterials.com/tw/contact/">聯絡我們</a>
+						</li>
+						<li class="pr-12">
+							<a class="text-snow hover:text-light-purple hover:translate-x-2 ease-linear duration-200 no-underline leading-10 block" href="https://www.benqmaterials.com/tw/privacy/sitemap/">網站地圖</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="py-4 px-0 text-[#a9a9a9] md:flex md:justify-between">
+				<ul class="mb-0 pl-0 pb-0">
+					<li class="text-[#DDDDDD] text-lg">
+						<span class="block md:inline-block tracking-widest">總部地址：</span>
+						<a class="no-underline text-inherit" 
+							href="https://maps.google.com.tw/?q=桃園市33343龜山區建國東路29號" target="_blank">
+							桃園市333403龜山區建國東路29號
+						</a>
+					</li>
+					<li class="text-sm md:text-base leading-5 font-light">29 Jianguo E. Rd., Guishan, Taoyuan 333403, Taiwan</li>
+					<li class="leading-7 font-light">TEL: +886-3-374-8800</li>
+					<li class="leading-7 font-light">FAX: +886-3-361-9900</li>
+				</ul>
+				<ul class="pl-0 flex">
+				  <li class="mr-2">
+					<a class="w-8 h-8 bg-[#f1f1f1] rounded-full no-underline flex justify-center items-center" 
+						href="https://tw.linkedin.com/company/benq-materials-corp" target="_blank">
+					  <i class="fa fa-linkedin text-[#4f177f] text-lg text-center"></i>
+					</a>
+				  </li>
+				  <li class="mr-2">
+					<a class="w-8 h-8 bg-[#f1f1f1] rounded-full no-underline flex justify-center items-center" 
+						href="https://www.facebook.com/BenQMaterialsCareer/" target="_blank">
+					  <i class="fa fa-facebook text-[#4f177f] text-lg text-center"></i>
+					</a>
+				  </li>
+				  <li class="mr-2">
+					<a class="w-8 h-8 bg-[#f1f1f1] rounded-full no-underline flex justify-center items-center" 
+						href="https://www.youtube.com/user/BenQMaterials" target="_blank">
+					  <i class="fa fa-youtube-play text-[#4f177f] text-lg text-center"></i>
+					</a>
+				  </li>
+				</ul>
+			</div>
+			<div class="text-[#dddddd] text-sm tracking-wider opacity-50">
+				COPYRIGHT © 2022 BENQ MATERIALS CORPORATION
+			</div>
+		</div>
+    </footer>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
